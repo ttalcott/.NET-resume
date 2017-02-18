@@ -1,0 +1,72 @@
+@model TravisResume.Models.Jobs
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Create</title>
+</head>
+<body>
+
+<form asp-action="Create">
+    <div class="form-horizontal">
+        <h4>Jobs</h4>
+        <hr />
+        <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+        <div class="form-group">
+            <label asp-for="companyName" class="col-md-2 control-label"></label>
+            <div class="col-md-10">
+                <input asp-for="companyName" class="form-control" />
+                <span asp-validation-for="companyName" class="text-danger" />
+            </div>
+        </div>
+        <div class="form-group">
+            <label asp-for="dateHired" class="col-md-2 control-label"></label>
+            <div class="col-md-10">
+                <input asp-for="dateHired" class="form-control" />
+                <span asp-validation-for="dateHired" class="text-danger" />
+            </div>
+        </div>
+        <div class="form-group">
+            <label asp-for="dateOver" class="col-md-2 control-label"></label>
+            <div class="col-md-10">
+                <input asp-for="dateOver" class="form-control" />
+                <span asp-validation-for="dateOver" class="text-danger" />
+            </div>
+        </div>
+        <div class="form-group">
+            <label asp-for="jobDescription" class="col-md-2 control-label"></label>
+            <div class="col-md-10">
+                <input asp-for="jobDescription" class="form-control" />
+                <span asp-validation-for="jobDescription" class="text-danger" />
+            </div>
+        </div>
+        <div class="form-group">
+            <label asp-for="jobTitle" class="col-md-2 control-label"></label>
+            <div class="col-md-10">
+                <input asp-for="jobTitle" class="form-control" />
+                <span asp-validation-for="jobTitle" class="text-danger" />
+            </div>
+        </div>
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <input type="submit" value="Create" class="btn btn-default" />
+            </div>
+        </div>
+    </div>
+</form>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
+</body>
+</html>
