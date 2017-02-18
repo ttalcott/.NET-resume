@@ -21,13 +21,18 @@ namespace TravisResume.Models
                 {
                     return;
                 }
-
+                //add a job 
                 context.Jobs.AddRange(
                     new Jobs
                     {
-
+                        companyName = "Aquila Technologies",
+                        jobTitle = "Assistant Network Engineer",
+                        jobDescription = "Networking assistant in charge of configuring switches and installing cables",
+                        dateHired = DateTime.Parse("05-22-2013"),
+                        dateOver = DateTime.Parse("02-01-2014")
                     }
                     );
+                context.SaveChanges();
             }
         }
     }

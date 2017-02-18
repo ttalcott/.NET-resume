@@ -25,7 +25,6 @@ namespace TravisResume.Models
         [Required]
         [Display(Name = "Job Description")]
         [RegularExpression(@"^[A-Z]+[a-zA-Z''-'\s]*$")]
-        [StringLength(30)]
         public string jobDescription { get; set; }
 
         [Required]
