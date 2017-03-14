@@ -5,7 +5,6 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
 using travis_resume.Models;
-using TravisResume.Models;
 
 namespace travis_resume.Data
 {

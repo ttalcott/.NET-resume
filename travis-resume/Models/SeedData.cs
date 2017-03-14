@@ -6,7 +6,7 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection;
 using travis_resume.Data;
 
-namespace TravisResume.Models
+namespace travis_resume.Models
 {
     public class SeedData
     {

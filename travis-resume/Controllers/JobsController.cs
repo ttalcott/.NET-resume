@@ -5,7 +5,7 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
-using TravisResume.Models;
+using travis_resume.Models;
 using travis_resume.Data;
 
 namespace travis_resume.Controllers

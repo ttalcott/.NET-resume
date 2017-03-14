@@ -10,8 +10,8 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
 using travis_resume.Data;
-using travis_resume.Models;
 using travis_resume.Services;
+using travis_resume.Models;
 
 namespace travis_resume
 {
@@ -90,8 +90,9 @@ namespace travis_resume
             {
                 routes.MapRoute(
                     name: "default",
-                    template: "{controller=Home}/{action=Index}/{id?}");
+                    template: "{controller=Jobs}/{action=Index}/{id?}");
             });
+            SeedData.Initialize(app.ApplicationServices);
         }
     }
 }
