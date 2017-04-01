@@ -90,9 +90,9 @@ namespace travis_resume
             {
                 routes.MapRoute(
                     name: "default",
-                    template: "{controller=Jobs}/{action=Index}/{id?}");
+                    template: "{controller=Home}/{action=Index}/{id?}");
             });
-            SeedData.Initialize(app.ApplicationServices);
+            
         }
     }
 }

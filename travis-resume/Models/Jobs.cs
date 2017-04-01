@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace travis_resume.Models
 {
-    public class Jobs
+    public class Jobs : Location
     {
         public int ID { get; set; }
 
@@ -14,7 +14,7 @@ namespace travis_resume.Models
         [Display(Name ="Company")]
         [RegularExpression(@"^[A-Z]+[a-zA-Z''-'\s]*$")]
         [StringLength(30)]
-        public string companyName { get; set; }
+        public string jobName { get; set; }
 
         [Required]
         [Display(Name = "Title")]
@@ -31,13 +31,12 @@ namespace travis_resume.Models
         [Display(Name ="Start Date")]
         [DisplayFormat(DataFormatString = "{0:MM-dd-yyyy}", ApplyFormatInEditMode = true)]
         [DataType(DataType.Date)]
-        public DateTime dateHired { get; set; }
+        public DateTime jobDateHired { get; set; }
 
-        [Required]
         [Display(Name = "End Date")]
         [DisplayFormat(DataFormatString = "{0:MM-dd-yyyy}", ApplyFormatInEditMode = true)]
         [DataType(DataType.Date)]
-        public DateTime dateOver { get; set; }
+        public DateTime jobDateOver { get; set; }
 
     }
 }

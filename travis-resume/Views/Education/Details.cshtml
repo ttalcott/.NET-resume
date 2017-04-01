@@ -1,4 +1,4 @@
-@model travis_resume.Models.Jobs
+@model travis_resume.Models.Education
 
 @{
     Layout = null;
@@ -14,7 +14,7 @@
 <body>
 
 <div>
-    <h4>Jobs</h4>
+    <h4>Education</h4>
     <hr />
     <dl class="dl-horizontal">
         <dt>
@@ -54,39 +54,27 @@
             @Html.DisplayFor(model => model.AddressZip)
         </dd>
         <dt>
-            @Html.DisplayNameFor(model => model.jobDateHired)
+            @Html.DisplayNameFor(model => model.EducationDescription)
         </dt>
         <dd>
-            @Html.DisplayFor(model => model.jobDateHired)
+            @Html.DisplayFor(model => model.EducationDescription)
         </dd>
         <dt>
-            @Html.DisplayNameFor(model => model.jobDateOver)
+            @Html.DisplayNameFor(model => model.EducationLevel)
         </dt>
         <dd>
-            @Html.DisplayFor(model => model.jobDateOver)
+            @Html.DisplayFor(model => model.EducationLevel)
         </dd>
         <dt>
-            @Html.DisplayNameFor(model => model.jobDescription)
+            @Html.DisplayNameFor(model => model.EducationName)
         </dt>
         <dd>
-            @Html.DisplayFor(model => model.jobDescription)
-        </dd>
-        <dt>
-            @Html.DisplayNameFor(model => model.jobName)
-        </dt>
-        <dd>
-            @Html.DisplayFor(model => model.jobName)
-        </dd>
-        <dt>
-            @Html.DisplayNameFor(model => model.jobTitle)
-        </dt>
-        <dd>
-            @Html.DisplayFor(model => model.jobTitle)
+            @Html.DisplayFor(model => model.EducationName)
         </dd>
     </dl>
 </div>
 <div>
-    <a asp-action="Edit" asp-route-id="@Model.ID">Edit</a> |
+    <a asp-action="Edit" asp-route-id="@Model.EducationId">Edit</a> |
     <a asp-action="Index">Back to List</a>
 </div>
 </body>

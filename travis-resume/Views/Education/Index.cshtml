@@ -1,0 +1,91 @@
+@model IEnumerable<travis_resume.Models.Education>
+
+@{
+    ViewData["Title"] = "Education";
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Index</title>
+</head>
+<body>
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.AddressCity)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.AddressId)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.AddressLineOne)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.AddressLineTwo)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.AddressState)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.AddressZip)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.EducationDescription)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.EducationLevel)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.EducationName)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.AddressCity)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.AddressId)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.AddressLineOne)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.AddressLineTwo)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.AddressState)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.AddressZip)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.EducationDescription)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.EducationLevel)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.EducationName)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.EducationId">Edit</a> |
+                <a asp-action="Details" asp-route-id="@item.EducationId">Details</a> |
+                <a asp-action="Delete" asp-route-id="@item.EducationId">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
+</body>
+</html>

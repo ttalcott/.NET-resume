@@ -8,9 +8,10 @@ using travis_resume.Data;
 namespace travis_resume.Data.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    partial class ApplicationDbContextModelSnapshot : ModelSnapshot
+    [Migration("20170401164615_Third")]
+    partial class Third
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
             modelBuilder
                 .HasAnnotation("ProductVersion", "1.0.1")
@@ -188,14 +189,14 @@ namespace travis_resume.Data.Migrations
                         .HasAnnotation("MaxLength", 60);
 
                     b.Property<string>("AddressLineTwo")
+                        .IsRequired()
                         .HasAnnotation("MaxLength", 60);
 
                     b.Property<string>("AddressState")
                         .IsRequired()
                         .HasAnnotation("MaxLength", 2);
 
-                    b.Property<string>("AddressZip")
-                        .IsRequired();
+                    b.Property<int>("AddressZip");
 
                     b.Property<string>("EducationDescription");
 
@@ -228,14 +229,14 @@ namespace travis_resume.Data.Migrations
                         .HasAnnotation("MaxLength", 60);
 
                     b.Property<string>("AddressLineTwo")
+                        .IsRequired()
                         .HasAnnotation("MaxLength", 60);
 
                     b.Property<string>("AddressState")
                         .IsRequired()
                         .HasAnnotation("MaxLength", 2);
 
-                    b.Property<string>("AddressZip")
-                        .IsRequired();
+                    b.Property<int>("AddressZip");
 
                     b.Property<DateTime>("jobDateHired");
 

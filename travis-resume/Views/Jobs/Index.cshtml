@@ -1,34 +1,81 @@
 @model IEnumerable<travis_resume.Models.Jobs>
 
 @{
-     ViewData["Title"] = "Travis Talcott Resume";
+    ViewData["Title"] = "Job History";
 }
-
 <!DOCTYPE html>
 
 <html>
 <head>
     <meta name="viewport" content="width=device-width" />
-    <title>Jobs</title>
+    <title>Index</title>
 </head>
 <body>
 <p>
     <a asp-action="Create">Create New</a>
 </p>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <h1>My Job History</h1>
+            </div>
+@foreach (var item in Model)
+{
+    <div class="col-md-12 push-down">
+        <h2>@Html.DisplayFor(modelItem => item.jobName)</h2>
+    </div>
+    <div class="col-md-12">
+        <p>@Html.DisplayFor(modelItem => item.AddressLineOne)</p>
+    </div>
+    <div class="col-md-12">
+        <p>@Html.DisplayFor(modelItem => item.AddressLineTwo)</p>
+    </div>
+    <div class="col-md-12">
+        <p>@Html.DisplayFor(modelItem => item.AddressCity), @Html.DisplayFor(modelItem => item.AddressState), @Html.DisplayFor(modelItem => item.AddressZip)</p>
+    </div>
+    <div class="col-md-12">
+        <h3>@Html.DisplayFor(modelItem => item.jobTitle)</h3>
+    </div>
+    <div class="col-md-3">
+        <h5><strong><em>@Html.DisplayFor(modelItem => item.jobDateHired) through @Html.DisplayFor(modelItem => item.jobDateOver)</em></strong></h5>
+    </div>
+
+}
+            
+        </div>
+    </div>
 <table class="table">
     <thead>
         <tr>
             <th>
-                @Html.DisplayNameFor(model => model.companyName)
+                @Html.DisplayNameFor(model => model.AddressCity)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.dateHired)
+                @Html.DisplayNameFor(model => model.AddressId)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.dateOver)
+                @Html.DisplayNameFor(model => model.AddressLineOne)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.AddressLineTwo)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.AddressState)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.AddressZip)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.jobDateHired)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.jobDateOver)
             </th>
             <th>
                 @Html.DisplayNameFor(model => model.jobDescription)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.jobName)
             </th>
             <th>
                 @Html.DisplayNameFor(model => model.jobTitle)
@@ -40,16 +87,34 @@
 @foreach (var item in Model) {
         <tr>
             <td>
-                @Html.DisplayFor(modelItem => item.companyName)
+                @Html.DisplayFor(modelItem => item.AddressCity)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.dateHired)
+                @Html.DisplayFor(modelItem => item.AddressId)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.dateOver)
+                @Html.DisplayFor(modelItem => item.AddressLineOne)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.AddressLineTwo)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.AddressState)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.AddressZip)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.jobDateHired)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.jobDateOver)
             </td>
             <td>
                 @Html.DisplayFor(modelItem => item.jobDescription)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.jobName)
             </td>
             <td>
                 @Html.DisplayFor(modelItem => item.jobTitle)

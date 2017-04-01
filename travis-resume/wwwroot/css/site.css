@@ -3,6 +3,33 @@
     padding-bottom: 20px;
 }
 
+/********************/
+/*utilities*/
+/*******************/
+.sfooter {
+	display: flex;
+	flex-direction: column;
+	min-height: 100vh;
+}
+
+.sfooter-content {
+	flex: 1 0 auto;
+}
+
+/**********/
+/*header*/
+/**********/
+
+.navbar-inverse .navbar-nav>li>a {
+    color: white;
+    font-size: large;
+}
+
+.navbar-brand {
+    font-size: 2em;
+}
+
+
 /* Wrapping element */
 /* Set some basic padding to keep content from hitting the edges */
 .body-content {

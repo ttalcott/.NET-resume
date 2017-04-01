@@ -1,4 +1,4 @@
-@model TravisResume.Models.Jobs
+@model travis_resume.Models.Jobs
 
 @{
     Layout = null;
@@ -20,24 +20,59 @@
         <div asp-validation-summary="ModelOnly" class="text-danger"></div>
     <input type="hidden" asp-for="ID" />
         <div class="form-group">
-            <label asp-for="companyName" class="col-md-2 control-label"></label>
+            <label asp-for="AddressCity" class="col-md-2 control-label"></label>
             <div class="col-md-10">
-                <input asp-for="companyName" class="form-control" />
-                <span asp-validation-for="companyName" class="text-danger" />
+                <input asp-for="AddressCity" class="form-control" />
+                <span asp-validation-for="AddressCity" class="text-danger" />
             </div>
         </div>
         <div class="form-group">
-            <label asp-for="dateHired" class="col-md-2 control-label"></label>
+            <label asp-for="AddressId" class="col-md-2 control-label"></label>
             <div class="col-md-10">
-                <input asp-for="dateHired" class="form-control" />
-                <span asp-validation-for="dateHired" class="text-danger" />
+                <input asp-for="AddressId" class="form-control" />
+                <span asp-validation-for="AddressId" class="text-danger" />
             </div>
         </div>
         <div class="form-group">
-            <label asp-for="dateOver" class="col-md-2 control-label"></label>
+            <label asp-for="AddressLineOne" class="col-md-2 control-label"></label>
             <div class="col-md-10">
-                <input asp-for="dateOver" class="form-control" />
-                <span asp-validation-for="dateOver" class="text-danger" />
+                <input asp-for="AddressLineOne" class="form-control" />
+                <span asp-validation-for="AddressLineOne" class="text-danger" />
+            </div>
+        </div>
+        <div class="form-group">
+            <label asp-for="AddressLineTwo" class="col-md-2 control-label"></label>
+            <div class="col-md-10">
+                <input asp-for="AddressLineTwo" class="form-control" />
+                <span asp-validation-for="AddressLineTwo" class="text-danger" />
+            </div>
+        </div>
+        <div class="form-group">
+            <label asp-for="AddressState" class="col-md-2 control-label"></label>
+            <div class="col-md-10">
+                <input asp-for="AddressState" class="form-control" />
+                <span asp-validation-for="AddressState" class="text-danger" />
+            </div>
+        </div>
+        <div class="form-group">
+            <label asp-for="AddressZip" class="col-md-2 control-label"></label>
+            <div class="col-md-10">
+                <input asp-for="AddressZip" class="form-control" />
+                <span asp-validation-for="AddressZip" class="text-danger" />
+            </div>
+        </div>
+        <div class="form-group">
+            <label asp-for="jobDateHired" class="col-md-2 control-label"></label>
+            <div class="col-md-10">
+                <input asp-for="jobDateHired" class="form-control" />
+                <span asp-validation-for="jobDateHired" class="text-danger" />
+            </div>
+        </div>
+        <div class="form-group">
+            <label asp-for="jobDateOver" class="col-md-2 control-label"></label>
+            <div class="col-md-10">
+                <input asp-for="jobDateOver" class="form-control" />
+                <span asp-validation-for="jobDateOver" class="text-danger" />
             </div>
         </div>
         <div class="form-group">
@@ -45,6 +80,13 @@
             <div class="col-md-10">
                 <input asp-for="jobDescription" class="form-control" />
                 <span asp-validation-for="jobDescription" class="text-danger" />
+            </div>
+        </div>
+        <div class="form-group">
+            <label asp-for="jobName" class="col-md-2 control-label"></label>
+            <div class="col-md-10">
+                <input asp-for="jobName" class="form-control" />
+                <span asp-validation-for="jobName" class="text-danger" />
             </div>
         </div>
         <div class="form-group">

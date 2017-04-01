@@ -10,22 +10,22 @@ using travis_resume.Models;
 
 namespace travis_resume.Controllers
 {
-    public class JobsController : Controller
+    public class EducationController : Controller
     {
         private readonly ApplicationDbContext _context;
 
-        public JobsController(ApplicationDbContext context)
+        public EducationController(ApplicationDbContext context)
         {
             _context = context;    
         }
 
-        // GET: Jobs
+        // GET: Education
         public async Task<IActionResult> Index()
         {
-            return View(await _context.Jobs.ToListAsync());
+            return View(await _context.Education.ToListAsync());
         }
 
-        // GET: Jobs/Details/5
+        // GET: Education/Details/5
         public async Task<IActionResult> Details(int? id)
         {
             if (id == null)
@@ -33,38 +33,38 @@ namespace travis_resume.Controllers
                 return NotFound();
             }
 
-            var jobs = await _context.Jobs.SingleOrDefaultAsync(m => m.ID == id);
-            if (jobs == null)
+            var education = await _context.Education.SingleOrDefaultAsync(m => m.EducationId == id);
+            if (education == null)
             {
                 return NotFound();
             }
 
-            return View(jobs);
+            return View(education);
         }
 
-        // GET: Jobs/Create
+        // GET: Education/Create
         public IActionResult Create()
         {
             return View();
         }
 
-        // POST: Jobs/Create
+        // POST: Education/Create
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("ID,AddressCity,AddressId,AddressLineOne,AddressLineTwo,AddressState,AddressZip,jobDateHired,jobDateOver,jobDescription,jobName,jobTitle")] Jobs jobs)
+        public async Task<IActionResult> Create([Bind("EducationId,AddressCity,AddressId,AddressLineOne,AddressLineTwo,AddressState,AddressZip,EducationDescription,EducationLevel,EducationName")] Education education)
         {
             if (ModelState.IsValid)
             {
-                _context.Add(jobs);
+                _context.Add(education);
                 await _context.SaveChangesAsync();
                 return RedirectToAction("Index");
             }
-            return View(jobs);
+            return View(education);
         }
 
-        // GET: Jobs/Edit/5
+        // GET: Education/Edit/5
         public async Task<IActionResult> Edit(int? id)
         {
             if (id == null)
@@ -72,22 +72,22 @@ namespace travis_resume.Controllers
                 return NotFound();
             }
 
-            var jobs = await _context.Jobs.SingleOrDefaultAsync(m => m.ID == id);
-            if (jobs == null)
+            var education = await _context.Education.SingleOrDefaultAsync(m => m.EducationId == id);
+            if (education == null)
             {
                 return NotFound();
             }
-            return View(jobs);
+            return View(education);
         }
 
-        // POST: Jobs/Edit/5
+        // POST: Education/Edit/5
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("ID,AddressCity,AddressId,AddressLineOne,AddressLineTwo,AddressState,AddressZip,jobDateHired,jobDateOver,jobDescription,jobName,jobTitle")] Jobs jobs)
+        public async Task<IActionResult> Edit(int id, [Bind("EducationId,AddressCity,AddressId,AddressLineOne,AddressLineTwo,AddressState,AddressZip,EducationDescription,EducationLevel,EducationName")] Education education)
         {
-            if (id != jobs.ID)
+            if (id != education.EducationId)
             {
                 return NotFound();
             }
@@ -96,12 +96,12 @@ namespace travis_resume.Controllers
             {
                 try
                 {
-                    _context.Update(jobs);
+                    _context.Update(education);
                     await _context.SaveChangesAsync();
                 }
                 catch (DbUpdateConcurrencyException)
                 {
-                    if (!JobsExists(jobs.ID))
+                    if (!EducationExists(education.EducationId))
                     {
                         return NotFound();
                     }
@@ -112,10 +112,10 @@ namespace travis_resume.Controllers
                 }
                 return RedirectToAction("Index");
             }
-            return View(jobs);
+            return View(education);
         }
 
-        // GET: Jobs/Delete/5
+        // GET: Education/Delete/5
         public async Task<IActionResult> Delete(int? id)
         {
             if (id == null)
@@ -123,29 +123,29 @@ namespace travis_resume.Controllers
                 return NotFound();
             }
 
-            var jobs = await _context.Jobs.SingleOrDefaultAsync(m => m.ID == id);
-            if (jobs == null)
+            var education = await _context.Education.SingleOrDefaultAsync(m => m.EducationId == id);
+            if (education == null)
             {
                 return NotFound();
             }
 
-            return View(jobs);
+            return View(education);
         }
 
-        // POST: Jobs/Delete/5
+        // POST: Education/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> DeleteConfirmed(int id)
         {
-            var jobs = await _context.Jobs.SingleOrDefaultAsync(m => m.ID == id);
-            _context.Jobs.Remove(jobs);
+            var education = await _context.Education.SingleOrDefaultAsync(m => m.EducationId == id);
+            _context.Education.Remove(education);
             await _context.SaveChangesAsync();
             return RedirectToAction("Index");
         }
 
-        private bool JobsExists(int id)
+        private bool EducationExists(int id)
         {
-            return _context.Jobs.Any(e => e.ID == id);
+            return _context.Education.Any(e => e.EducationId == id);
         }
     }
 }

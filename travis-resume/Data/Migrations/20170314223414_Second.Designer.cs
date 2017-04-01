@@ -8,9 +8,10 @@ using travis_resume.Data;
 namespace travis_resume.Data.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    partial class ApplicationDbContextModelSnapshot : ModelSnapshot
+    [Migration("20170314223414_Second")]
+    partial class Second
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
             modelBuilder
                 .HasAnnotation("ProductVersion", "1.0.1")
@@ -172,46 +173,6 @@ namespace travis_resume.Data.Migrations
                     b.ToTable("AspNetUsers");
                 });
 
-            modelBuilder.Entity("travis_resume.Models.Education", b =>
-                {
-                    b.Property<int>("EducationId")
-                        .ValueGeneratedOnAdd();
-
-                    b.Property<string>("AddressCity")
-                        .IsRequired()
-                        .HasAnnotation("MaxLength", 30);
-
-                    b.Property<int>("AddressId");
-
-                    b.Property<string>("AddressLineOne")
-                        .IsRequired()
-                        .HasAnnotation("MaxLength", 60);
-
-                    b.Property<string>("AddressLineTwo")
-                        .HasAnnotation("MaxLength", 60);
-
-                    b.Property<string>("AddressState")
-                        .IsRequired()
-                        .HasAnnotation("MaxLength", 2);
-
-                    b.Property<string>("AddressZip")
-                        .IsRequired();
-
-                    b.Property<string>("EducationDescription");
-
-                    b.Property<string>("EducationLevel")
-                        .IsRequired()
-                        .HasAnnotation("MaxLength", 30);
-
-                    b.Property<string>("EducationName")
-                        .IsRequired()
-                        .HasAnnotation("MaxLength", 30);
-
-                    b.HasKey("EducationId");
-
-                    b.ToTable("Education");
-                });
-
             modelBuilder.Entity("travis_resume.Models.Jobs", b =>
                 {
                     b.Property<int>("ID")
@@ -228,14 +189,14 @@ namespace travis_resume.Data.Migrations
                         .HasAnnotation("MaxLength", 60);
 
                     b.Property<string>("AddressLineTwo")
+                        .IsRequired()
                         .HasAnnotation("MaxLength", 60);
 
                     b.Property<string>("AddressState")
                         .IsRequired()
                         .HasAnnotation("MaxLength", 2);
 
-                    b.Property<string>("AddressZip")
-                        .IsRequired();
+                    b.Property<int>("AddressZip");
 
                     b.Property<DateTime>("jobDateHired");
 

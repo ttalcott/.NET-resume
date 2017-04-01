@@ -24,5 +24,7 @@ namespace travis_resume.Data
         }
 
         public DbSet<Jobs> Jobs { get; set; }
+
+        public DbSet<Education> Education { get; set; }
     }
 }

@@ -1,4 +1,4 @@
-@model TravisResume.Models.Jobs
+@model travis_resume.Models.Jobs
 
 @{
     Layout = null;
@@ -19,28 +19,64 @@
     <hr />
     <dl class="dl-horizontal">
         <dt>
-            @Html.DisplayNameFor(model => model.companyName)
+            @Html.DisplayNameFor(model => model.AddressCity)
         </dt>
         <dd>
-            @Html.DisplayFor(model => model.companyName)
+            @Html.DisplayFor(model => model.AddressCity)
         </dd>
         <dt>
-            @Html.DisplayNameFor(model => model.dateHired)
+            @Html.DisplayNameFor(model => model.AddressId)
         </dt>
         <dd>
-            @Html.DisplayFor(model => model.dateHired)
+            @Html.DisplayFor(model => model.AddressId)
         </dd>
         <dt>
-            @Html.DisplayNameFor(model => model.dateOver)
+            @Html.DisplayNameFor(model => model.AddressLineOne)
         </dt>
         <dd>
-            @Html.DisplayFor(model => model.dateOver)
+            @Html.DisplayFor(model => model.AddressLineOne)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.AddressLineTwo)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.AddressLineTwo)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.AddressState)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.AddressState)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.AddressZip)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.AddressZip)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.jobDateHired)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.jobDateHired)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.jobDateOver)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.jobDateOver)
         </dd>
         <dt>
             @Html.DisplayNameFor(model => model.jobDescription)
         </dt>
         <dd>
             @Html.DisplayFor(model => model.jobDescription)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.jobName)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.jobName)
         </dd>
         <dt>
             @Html.DisplayNameFor(model => model.jobTitle)

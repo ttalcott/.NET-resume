@@ -1,7 +1,7 @@
-@model travis_resume.Models.Jobs
+@model travis_resume.Models.Education
 
 @{
-    ViewData["Title"] = "Create";
+    Layout = null;
 }
 
 <!DOCTYPE html>
@@ -9,15 +9,16 @@
 <html>
 <head>
     <meta name="viewport" content="width=device-width" />
-    <title>Create</title>
+    <title>Edit</title>
 </head>
 <body>
 
-<form asp-action="Create">
+<form asp-action="Edit">
     <div class="form-horizontal">
-        <h4>Jobs</h4>
+        <h4>Education</h4>
         <hr />
         <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+    <input type="hidden" asp-for="EducationId" />
         <div class="form-group">
             <label asp-for="AddressCity" class="col-md-2 control-label"></label>
             <div class="col-md-10">
@@ -25,7 +26,13 @@
                 <span asp-validation-for="AddressCity" class="text-danger" />
             </div>
         </div>
-        
+        <div class="form-group">
+            <label asp-for="AddressId" class="col-md-2 control-label"></label>
+            <div class="col-md-10">
+                <input asp-for="AddressId" class="form-control" />
+                <span asp-validation-for="AddressId" class="text-danger" />
+            </div>
+        </div>
         <div class="form-group">
             <label asp-for="AddressLineOne" class="col-md-2 control-label"></label>
             <div class="col-md-10">
@@ -55,43 +62,29 @@
             </div>
         </div>
         <div class="form-group">
-            <label asp-for="jobDateHired" class="col-md-2 control-label"></label>
+            <label asp-for="EducationDescription" class="col-md-2 control-label"></label>
             <div class="col-md-10">
-                <input asp-for="jobDateHired" class="form-control" />
-                <span asp-validation-for="jobDateHired" class="text-danger" />
+                <input asp-for="EducationDescription" class="form-control" />
+                <span asp-validation-for="EducationDescription" class="text-danger" />
             </div>
         </div>
         <div class="form-group">
-            <label asp-for="jobDateOver" class="col-md-2 control-label"></label>
+            <label asp-for="EducationLevel" class="col-md-2 control-label"></label>
             <div class="col-md-10">
-                <input asp-for="jobDateOver" class="form-control" />
-                <span asp-validation-for="jobDateOver" class="text-danger" />
+                <input asp-for="EducationLevel" class="form-control" />
+                <span asp-validation-for="EducationLevel" class="text-danger" />
             </div>
         </div>
         <div class="form-group">
-            <label asp-for="jobDescription" class="col-md-2 control-label"></label>
+            <label asp-for="EducationName" class="col-md-2 control-label"></label>
             <div class="col-md-10">
-                <input asp-for="jobDescription" class="form-control" />
-                <span asp-validation-for="jobDescription" class="text-danger" />
-            </div>
-        </div>
-        <div class="form-group">
-            <label asp-for="jobName" class="col-md-2 control-label"></label>
-            <div class="col-md-10">
-                <input asp-for="jobName" class="form-control" />
-                <span asp-validation-for="jobName" class="text-danger" />
-            </div>
-        </div>
-        <div class="form-group">
-            <label asp-for="jobTitle" class="col-md-2 control-label"></label>
-            <div class="col-md-10">
-                <input asp-for="jobTitle" class="form-control" />
-                <span asp-validation-for="jobTitle" class="text-danger" />
+                <input asp-for="EducationName" class="form-control" />
+                <span asp-validation-for="EducationName" class="text-danger" />
             </div>
         </div>
         <div class="form-group">
             <div class="col-md-offset-2 col-md-10">
-                <input type="submit" value="Create" class="btn btn-default" />
+                <input type="submit" value="Save" class="btn btn-default" />
             </div>
         </div>
     </div>
