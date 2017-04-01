@@ -8,6 +8,7 @@
     <environment names="Development">
         <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.css" />
         <link rel="stylesheet" href="~/css/site.css" />
+        <link href="https://fonts.googleapis.com/css?family=Raleway:400,700" rel="stylesheet">
     </environment>
     <environment names="Staging,Production">
         <link rel="stylesheet" href="https://ajax.aspnetcdn.com/ajax/bootstrap/3.3.6/css/bootstrap.min.css"
@@ -20,7 +21,7 @@
 <body class="sfooter">
     <div class="sfooter-content">
         <div class="navbar navbar-inverse navbar-fixed-top">
-            <div class="container">
+            <div class="container-fluid">
                 <div class="navbar-header">
                     <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
                         <span class="sr-only">Toggle navigation</span>
@@ -31,13 +32,21 @@
                     <a asp-area="" asp-controller="Home" asp-action="Index" class="navbar-brand">Travis Talcott</a>
                 </div>
                 <div class="navbar-collapse collapse">
-                    <ul class="nav navbar-nav">
-                        <li><a asp-area="" asp-controller="Home" asp-action="Index">Home</a></li>
-                        <li><a asp-area="" asp-controller="Home" asp-action="About">About</a></li>
-                        <li><a asp-area="" asp-controller="Resume" asp-action="Resume">Resume</a></li>
+                    <ul class="nav navbar-nav navbar-right">
+                        <li><a asp-area="" asp-controller="Home" asp-action="About">About Me</a></li>
+                        <li class="dropdown">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Resume <span class="caret"></span></a>
+                            <ul class="dropdown-menu">
+                                <li><a asp-area="" asp-controller="Jobs">Job History</a></li>
+                                <li><a asp-area="" asp-controller="Education">Education</a></li>
+                                <li><a href="#">References</a></li>
+                                <li role="separator" class="divider"></li>
+                                <li><a href="#">Full Resume</a></li>
+                            </ul>
+                        </li>
                         <li><a asp-area="" asp-controller="Home" asp-action="Contact">Contact</a></li>
                     </ul>
-                    @await Html.PartialAsync("_LoginPartial")
+                    @*@await Html.PartialAsync("_LoginPartial")*@
                 </div>
             </div>
         </div>
@@ -45,7 +54,7 @@
             @RenderBody()
             <hr />
             <footer>
-                <p>&copy; 2017 - travis_resume</p>
+                <p>&copy; 2017 - Travis Talcott</p>
             </footer>
         </div>
 
