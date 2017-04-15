@@ -5,30 +5,38 @@
 }
 
 <div class="col-sm-12">
-    <h1>@Html.DisplayFor(model => model.Contact.PersonFullName)</h1>
-    <h4>@Html.DisplayFor(model => model.Contact.PersonEmail)</h4>
-    <h4>@Html.DisplayFor(model => model.Contact.PersonPhone)</h4>
+    <h1 class="center">@Html.DisplayFor(model => model.Contact.PersonFullName)</h1>
+    <h4 class="center">@Html.DisplayFor(model => model.Contact.PersonEmail)</h4>
+    <h4 class="center">@Html.DisplayFor(model => model.Contact.PersonPhone)</h4>
     <hr />
 
 </div>
 
 
-<h4>@Html.DisplayFor(model => model.Job.FirstOrDefault().jobName)</h4>
+<div class="job-history">
+    <h3><strong>Experience:</strong></h3>
+
+@foreach (var item in Model.Job)
+{
+    <h3>@Html.DisplayFor(modelItem => item.jobName)</h3>
+    <h4>@Html.DisplayFor(modelItem => item.jobTitle)</h4>
+    <p><em>@Html.DisplayFor(modelItem => item.jobDateHired) through @Html.DisplayFor(modelItem => item.jobDateOver)</em></p>  
+    <p>@Html.DisplayFor(modelItem => item.jobDescription)</p>
+
+}
+</div>
+
+<div class="education-history">
+    <h3><strong>Education:</strong></h3>
+
     @foreach (var item in Model.Schools)
     {
-        <tr>
-            <td>
-                @Html.DisplayFor(modelItem => item.EducationName)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.EducationDescription)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.EducationLevel)
-            </td>
-        </tr>
-    }
+        <h3>@Html.DisplayFor(modelItem => item.EducationName)</h3>
+        <h4>@Html.DisplayFor(modelItem => item.EducationDescription)</h4>
+        <p>@Html.DisplayFor(modelItem => item.EducationLevel)</p>
 
+    }
+</div>
 <div>
     <a asp-action="Edit" asp-route-id="@Model.Id">Edit</a> |
     <a asp-action="Index">Back to List</a>
