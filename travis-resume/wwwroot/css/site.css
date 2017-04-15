@@ -3,6 +3,10 @@
     padding-bottom: 20px;
 }
 
+h1, h3 {
+    font-family: 'Playfair Display', serif;
+}
+
 /********************/
 /*utilities*/
 /*******************/
@@ -32,9 +36,13 @@
     font-family: 'Raleway', sans-serif;
 }
 
+.navbar-inverse .navbar-nav>li>a:hover {
+    color: red;
+}
+
 .navbar-brand {
     font-size: 2em;
-    font-family: 'Raleway', sans-serif;
+    font-family: 'Playfair Display', serif;
     color: black !important;
 }
 
@@ -87,4 +95,5 @@ textarea {
 
 .center {
     text-align: center;
+    font-family: 'Raleway', sans-serif;
 }

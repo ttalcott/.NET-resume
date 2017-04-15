@@ -14,119 +14,20 @@
 <p>
     <a asp-action="Create">Create New</a>
 </p>
-    <div class="container">
-        <div class="row">
-            <div class="col-md-12">
-                <h1>My Job History</h1>
-            </div>
-@foreach (var item in Model)
-{
-    <div class="col-md-12 push-down">
-        <h2>@Html.DisplayFor(modelItem => item.jobName)</h2>
-    </div>
-    <div class="col-md-12">
-        <p>@Html.DisplayFor(modelItem => item.AddressLineOne)</p>
-    </div>
-    <div class="col-md-12">
-        <p>@Html.DisplayFor(modelItem => item.AddressLineTwo)</p>
-    </div>
-    <div class="col-md-12">
-        <p>@Html.DisplayFor(modelItem => item.AddressCity), @Html.DisplayFor(modelItem => item.AddressState), @Html.DisplayFor(modelItem => item.AddressZip)</p>
-    </div>
-    <div class="col-md-12">
-        <h3>@Html.DisplayFor(modelItem => item.jobTitle)</h3>
-    </div>
-    <div class="col-md-3">
-        <h5><strong><em>@Html.DisplayFor(modelItem => item.jobDateHired) through @Html.DisplayFor(modelItem => item.jobDateOver)</em></strong></h5>
+    <div class="job-history">
+        <h3><strong>Experience:</strong></h3>
+
+        @foreach (var item in Model)
+        {
+            <h3>@Html.DisplayFor(modelItem => item.jobName)</h3>
+            <h4>@Html.DisplayFor(modelItem => item.jobTitle)</h4>
+            <p><em>@Html.DisplayFor(modelItem => item.jobDateHired) through @Html.DisplayFor(modelItem => item.jobDateOver)</em></p>
+            <p>@Html.DisplayFor(modelItem => item.jobDescription)</p>
+            <a asp-action="Delete" asp-route-id="@item.ID">Delete</a>
+
+        }
+        <hr />
     </div>
 
-}
-            
-        </div>
-    </div>
-<table class="table">
-    <thead>
-        <tr>
-            <th>
-                @Html.DisplayNameFor(model => model.AddressCity)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.AddressId)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.AddressLineOne)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.AddressLineTwo)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.AddressState)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.AddressZip)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.jobDateHired)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.jobDateOver)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.jobDescription)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.jobName)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.jobTitle)
-            </th>
-            <th></th>
-        </tr>
-    </thead>
-    <tbody>
-@foreach (var item in Model) {
-        <tr>
-            <td>
-                @Html.DisplayFor(modelItem => item.AddressCity)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.AddressId)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.AddressLineOne)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.AddressLineTwo)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.AddressState)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.AddressZip)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.jobDateHired)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.jobDateOver)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.jobDescription)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.jobName)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.jobTitle)
-            </td>
-            <td>
-                <a asp-action="Edit" asp-route-id="@item.ID">Edit</a> |
-                <a asp-action="Details" asp-route-id="@item.ID">Details</a> |
-                <a asp-action="Delete" asp-route-id="@item.ID">Delete</a>
-            </td>
-        </tr>
-}
-    </tbody>
-</table>
 </body>
 </html>

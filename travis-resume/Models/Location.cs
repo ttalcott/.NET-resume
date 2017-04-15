@@ -12,23 +12,27 @@ namespace travis_resume.Models
 
         [Required]
         [StringLength(60)]
-        [Display(Name = "Line One")]
+        [Display(Name = "Address Line One")]
         public string AddressLineOne { get; set; }
 
         [StringLength(60)]
+        [Display(Name = "Address Line Two")]
         public string AddressLineTwo { get; set; }
 
         [Required]
         [RegularExpression(@"^[A-Z]+[a-zA-Z''-'\s]*$")]
         [StringLength(30)]
+        [Display(Name = "City")]
         public string AddressCity { get; set; }
 
         [Required]
         [RegularExpression(@"^[A-Z]+[a-zA-Z''-'\s]*$")]
         [StringLength(2)]
+        [Display(Name = "State")]
         public string AddressState { get; set; }
 
         [Required]
+        [Display(Name = "Zip")]
         public string AddressZip { get; set; }
 
     }

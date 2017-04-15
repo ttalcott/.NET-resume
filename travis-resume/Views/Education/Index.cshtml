@@ -9,13 +9,26 @@
 <html>
 <head>
     <meta name="viewport" content="width=device-width" />
-    <title>Index</title>
+    <title>Education History</title>
 </head>
 <body>
 <p>
     <a asp-action="Create">Create New</a>
 </p>
-<table class="table">
+    <div class="education-history">
+        <h3><strong>Education:</strong></h3>
+
+        @foreach (var item in Model)
+        {
+            <h3>@Html.DisplayFor(modelItem => item.EducationName)</h3>
+            <h4>@Html.DisplayFor(modelItem => item.EducationDescription)</h4>
+            <p>@Html.DisplayFor(modelItem => item.EducationLevel)</p>
+            <a asp-action="Delete" asp-route-id="@item.EducationId">Delete</a>
+
+        }
+        <hr />
+    </div>
+@*<table class="table">
     <thead>
         <tr>
             <th>
@@ -86,6 +99,6 @@
         </tr>
 }
     </tbody>
-</table>
+</table>*@
 </body>
 </html>

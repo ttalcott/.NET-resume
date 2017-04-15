@@ -18,7 +18,6 @@ namespace travis_resume.Models
         public string EducationName { get; set; }
 
         [Required]
-        [RegularExpression(@"^[A-Z]+[a-zA-Z''-'\s]*$")]
         [StringLength(30)]
         [Display(Name = "Level")]
         public string EducationLevel { get; set; }

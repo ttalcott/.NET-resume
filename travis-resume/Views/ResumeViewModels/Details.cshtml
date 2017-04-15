@@ -8,6 +8,8 @@
     <h1 class="center">@Html.DisplayFor(model => model.Contact.PersonFullName)</h1>
     <h4 class="center">@Html.DisplayFor(model => model.Contact.PersonEmail)</h4>
     <h4 class="center">@Html.DisplayFor(model => model.Contact.PersonPhone)</h4>
+    <h4 class="center"><a href="http://www.lyradevelopment.com"  target="_blank">www.lyradevelopment.com</a></h4>
+    <h4 class="center"><a href="https://www.github.com/ttalcott" target="_blank">www.github.com/ttalcott</a></h4>
     <hr />
 
 </div>
@@ -24,6 +26,7 @@
     <p>@Html.DisplayFor(modelItem => item.jobDescription)</p>
 
 }
+    <hr />
 </div>
 
 <div class="education-history">
@@ -36,8 +39,6 @@
         <p>@Html.DisplayFor(modelItem => item.EducationLevel)</p>
 
     }
+    <hr />
 </div>
-<div>
-    <a asp-action="Edit" asp-route-id="@Model.Id">Edit</a> |
-    <a asp-action="Index">Back to List</a>
-</div>
+

@@ -90,7 +90,7 @@ namespace travis_resume
             {
                 routes.MapRoute(
                     name: "default",
-                    template: "{controller=Home}/{action=Index}/{id?}");
+                    template: "{controller=ResumeViewModels}/{action=Details}/{id=1}");
             });
             
         }
