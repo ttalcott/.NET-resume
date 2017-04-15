@@ -5,6 +5,7 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
 using travis_resume.Models;
+using travis_resume.Models.ResumeViewModels;
 
 namespace travis_resume.Data
 {
@@ -26,5 +27,9 @@ namespace travis_resume.Data
         public DbSet<Jobs> Jobs { get; set; }
 
         public DbSet<Education> Education { get; set; }
+
+        public DbSet<ResumeViewModel> ResumeViewModel { get; set; }
+
+        public DbSet<Person> Person { get; set; }
     }
 }

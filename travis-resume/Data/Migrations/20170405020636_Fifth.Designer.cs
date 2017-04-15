@@ -8,9 +8,10 @@ using travis_resume.Data;
 namespace travis_resume.Data.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    partial class ApplicationDbContextModelSnapshot : ModelSnapshot
+    [Migration("20170405020636_Fifth")]
+    partial class Fifth
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
             modelBuilder
                 .HasAnnotation("ProductVersion", "1.0.1")
@@ -300,11 +301,7 @@ namespace travis_resume.Data.Migrations
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd();
 
-                    b.Property<int?>("ContactPersonId");
-
                     b.HasKey("Id");
-
-                    b.HasIndex("ContactPersonId");
 
                     b.ToTable("ResumeViewModel");
                 });
@@ -368,13 +365,6 @@ namespace travis_resume.Data.Migrations
                     b.HasOne("travis_resume.Models.ResumeViewModels.ResumeViewModel")
                         .WithMany("Job")
                         .HasForeignKey("ResumeViewModelId");
-                });
-
-            modelBuilder.Entity("travis_resume.Models.ResumeViewModels.ResumeViewModel", b =>
-                {
-                    b.HasOne("travis_resume.Models.Person", "Contact")
-                        .WithMany()
-                        .HasForeignKey("ContactPersonId");
                 });
         }
     }

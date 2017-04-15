@@ -1,0 +1,53 @@
+@model IEnumerable<travis_resume.Models.Person>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.PersonEmail)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.PersonFirstName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.PersonLastName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.PersonPhone)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.PersonEmail)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.PersonFirstName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.PersonLastName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.PersonPhone)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.PersonId">Edit</a> |
+                <a asp-action="Details" asp-route-id="@item.PersonId">Details</a> |
+                <a asp-action="Delete" asp-route-id="@item.PersonId">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

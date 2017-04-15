@@ -1,0 +1,42 @@
+@model travis_resume.Models.Person
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Person</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.PersonEmail)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.PersonEmail)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.PersonFirstName)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.PersonFirstName)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.PersonLastName)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.PersonLastName)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.PersonPhone)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.PersonPhone)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-action="Edit" asp-route-id="@Model.PersonId">Edit</a> |
+    <a asp-action="Index">Back to List</a>
+</div>

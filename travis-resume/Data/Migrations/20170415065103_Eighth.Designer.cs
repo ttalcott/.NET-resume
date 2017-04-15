@@ -8,9 +8,10 @@ using travis_resume.Data;
 namespace travis_resume.Data.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    partial class ApplicationDbContextModelSnapshot : ModelSnapshot
+    [Migration("20170415065103_Eighth")]
+    partial class Eighth
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
             modelBuilder
                 .HasAnnotation("ProductVersion", "1.0.1")
@@ -207,7 +208,7 @@ namespace travis_resume.Data.Migrations
                         .IsRequired()
                         .HasAnnotation("MaxLength", 30);
 
-                    b.Property<int>("PersonId");
+                    b.Property<int?>("PersonId");
 
                     b.Property<int?>("ResumeViewModelId");
 
@@ -245,7 +246,7 @@ namespace travis_resume.Data.Migrations
                     b.Property<string>("AddressZip")
                         .IsRequired();
 
-                    b.Property<int>("PersonId");
+                    b.Property<int?>("PersonId");
 
                     b.Property<int?>("ResumeViewModelId");
 
@@ -350,8 +351,7 @@ namespace travis_resume.Data.Migrations
                 {
                     b.HasOne("travis_resume.Models.Person", "People")
                         .WithMany()
-                        .HasForeignKey("PersonId")
-                        .OnDelete(DeleteBehavior.Cascade);
+                        .HasForeignKey("PersonId");
 
                     b.HasOne("travis_resume.Models.ResumeViewModels.ResumeViewModel")
                         .WithMany("Schools")
@@ -362,8 +362,7 @@ namespace travis_resume.Data.Migrations
                 {
                     b.HasOne("travis_resume.Models.Person", "People")
                         .WithMany()
-                        .HasForeignKey("PersonId")
-                        .OnDelete(DeleteBehavior.Cascade);
+                        .HasForeignKey("PersonId");
 
                     b.HasOne("travis_resume.Models.ResumeViewModels.ResumeViewModel")
                         .WithMany("Job")

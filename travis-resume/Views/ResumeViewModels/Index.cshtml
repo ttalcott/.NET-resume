@@ -1,0 +1,26 @@
+@model  travis_resume.Models.ResumeViewModels.ResumeViewModel
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>
+                <a asp-action="Details" asp-route-id="1">Details</a> 
+            </td>
+        </tr>
+
+    </tbody>
+</table>
